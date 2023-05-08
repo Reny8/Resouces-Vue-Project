@@ -11,7 +11,11 @@
       ></textarea>
 
       <label> Link</label>
-      <input placeholder="Provide a link..." v-model="newResource.link" />
+      <input
+        placeholder="Provide a link..."
+        v-model="newResource.link"
+        type="url"
+      />
 
       <button>add resource</button>
     </form>
