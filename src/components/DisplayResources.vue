@@ -1,13 +1,13 @@
 <template>
   <div v-if="showResources">
-    <section v v-for="resource in resources" :key="resource.id">
+    <section v v-for="resource in resources" :key="resource.link">
       <div>
         <h2>{{ resource.title }}</h2>
         <p>{{ resource.description }}</p>
         <a :href="resource.link" target="_blank"><p>view resource</p></a>
       </div>
       <div>
-        <button @click="deleteItem(resource.id)">delete</button>
+        <button @click="deleteItem(resource.link)">delete</button>
       </div>
     </section>
   </div>

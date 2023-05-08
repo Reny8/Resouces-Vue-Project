@@ -25,18 +25,15 @@ export default {
   },
   data() {
     return {
-      counter: 2,
       showResources: true,
       showForm: false,
       resources: [
         {
-          id: 1,
           title: 'vue guide',
           description: 'The official Vue.js documentation.',
           link: 'https://vuejs.org/guide/introduction.html',
         },
         {
-          id: 2,
           title: 'google',
           description: 'Learn more about google by clicking here.',
           link: 'https://cloud.google.com/docs/',
@@ -52,11 +49,10 @@ export default {
       this.showForm = !this.showForm;
     },
     handleAdd(item) {
-      item.id = this.counter++;
       this.resources.push(item);
     },
-    handleDelete(id) {
-      const newArray = this.resources.filter((item) => item.id !== id);
+    handleDelete(link) {
+      const newArray = this.resources.filter((item) => item.link !== link);
       this.resources = newArray;
     },
   },

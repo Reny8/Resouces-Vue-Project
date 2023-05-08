@@ -16,15 +16,22 @@
       <button>add resource</button>
     </form>
   </section>
+  <teleport to="#app">
+    <AlertBox :open="open" :toggleAlertBox="toggleAlertBox"
+  /></teleport>
 </template>
 <script>
+import AlertBox from './AlertBox.vue';
 export default {
   name: 'AddResource',
+  components: {
+    AlertBox,
+  },
   props: ['handleAdd', 'showForm'],
   data() {
     return {
+      open: false,
       newResource: {
-        id: 0,
         title: '',
         description: '',
         link: '',
@@ -33,13 +40,19 @@ export default {
   },
   methods: {
     addItem(item) {
+      if (item.title === '' || item.description === '' || item.link === '') {
+        this.toggleAlertBox();
+        return;
+      }
       this.handleAdd(item);
       this.newResource = {
-        id: 0,
         title: '',
         description: '',
         link: '',
       };
+    },
+    toggleAlertBox() {
+      this.open = !this.open;
     },
   },
 };
