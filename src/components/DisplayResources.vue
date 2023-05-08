@@ -7,7 +7,7 @@
         <a :href="resource.link" target="_blank"><p>view resource</p></a>
       </div>
       <div>
-        <button>delete</button>
+        <button @click="deleteItem(resource.id)">delete</button>
       </div>
     </section>
   </div>
@@ -15,7 +15,12 @@
 <script>
 export default {
   name: 'DisplayResources',
-  props: ['resources', 'showResources'],
+  props: ['resources', 'showResources', 'handleDelete'],
+  methods: {
+    deleteItem(id) {
+      this.handleDelete(id);
+    },
+  },
 };
 </script>
 

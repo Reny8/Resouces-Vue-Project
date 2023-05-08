@@ -3,7 +3,11 @@
     <h1>ResourcesApp</h1>
   </header>
   <TheNavBar :toggleResources="toggleResources" :toggleForm="toggleForm" />
-  <DisplayResources :resources="resources" :showResources="showResources" />
+  <DisplayResources
+    :resources="resources"
+    :showResources="showResources"
+    :handleDelete="handleDelete"
+  />
   <AddResource :handleAdd="handleAdd" :showForm="showForm" />
 </template>
 
@@ -50,6 +54,10 @@ export default {
     handleAdd(item) {
       item.id = this.counter++;
       this.resources.push(item);
+    },
+    handleDelete(id) {
+      const newArray = this.resources.filter((item) => item.id !== id);
+      this.resources = newArray;
     },
   },
 };
