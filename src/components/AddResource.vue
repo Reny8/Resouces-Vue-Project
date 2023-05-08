@@ -1,6 +1,6 @@
 <template>
   <section v-if="showForm">
-    <form>
+    <form @submit.prevent="addItem(newResource)">
       <label> Title</label>
       <input placeholder="Enter a title..." v-model="newResource.title" />
 
@@ -34,6 +34,12 @@ export default {
   methods: {
     addItem(item) {
       this.handleAdd(item);
+      this.newResource = {
+        id: 0,
+        title: '',
+        description: '',
+        link: '',
+      };
     },
   },
 };
