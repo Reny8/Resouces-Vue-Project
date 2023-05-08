@@ -63,7 +63,6 @@ div#overlay {
   transition: 200ms ease-in-out;
   background-color: #7d7d7da4;
   pointer-events: none;
-  z-index: 100 !important;
 }
 dialog div:last-child {
   display: flex;
@@ -82,9 +81,11 @@ dialog button {
     rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
   color: white;
 }
+dialog button:hover {
+  cursor: pointer;
+}
 div#overlay.active {
   pointer-events: all;
   opacity: 1;
-  z-index: 20 !important;
 }
 </style>
