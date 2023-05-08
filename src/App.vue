@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <header>
+    <h1>ResourcesApp</h1>
+  </header>
+  <TheNavBar />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TheNavBar from './components/TheNavBar.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    TheNavBar,
+  },
+  data() {
+    return {
+      resources: [],
+    };
+  },
+};
 </script>
 
 <style>
@@ -21,6 +28,19 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+header {
+  width: 100%;
+  background-color: #600b2c;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  padding: 0.5rem;
+}
+header h1 {
+  filter: drop-shadow(2px 2px 2px black);
+}
+body {
+  margin: 0rem;
 }
 </style>
