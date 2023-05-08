@@ -17,8 +17,8 @@ export default {
   name: 'DisplayResources',
   props: ['resources', 'showResources', 'handleDelete'],
   methods: {
-    deleteItem(id) {
-      this.handleDelete(id);
+    deleteItem(link) {
+      this.handleDelete(link);
     },
   },
 };
