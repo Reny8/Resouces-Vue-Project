@@ -50,6 +50,7 @@ form {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.3rem;
+  padding: 1rem;
 }
 label {
   font-weight: 700;

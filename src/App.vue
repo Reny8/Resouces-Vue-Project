@@ -31,7 +31,7 @@ export default {
       resources: [
         {
           id: 1,
-          title: 'offical guide',
+          title: 'vue guide',
           description: 'The official Vue.js documentation.',
           link: 'https://vuejs.org/guide/introduction.html',
         },
