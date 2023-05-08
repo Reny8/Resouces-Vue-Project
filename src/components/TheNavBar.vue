@@ -48,6 +48,7 @@ section button:hover {
   background-color: #360b596c;
   transition-duration: 500ms;
   color: white;
+  cursor: pointer;
 }
 section button.active {
   background-color: #360b59;
