@@ -10,6 +10,7 @@
 <script>
 export default {
   name: 'TheNavBar',
+  props: ['toggleResources', 'toggleForm'],
   data() {
     return {
       stored: true,
@@ -20,6 +21,8 @@ export default {
     handleClick() {
       this.stored = !this.stored;
       this.add = !this.add;
+      this.toggleResources();
+      this.toggleForm();
     },
   },
 };
@@ -27,11 +30,6 @@ export default {
 
 <style scoped>
 section {
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px -1px,
-    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
-  margin: 2rem 4rem;
-  padding: 1rem;
-  border-radius: 3px;
   display: flex;
   justify-content: space-between;
   gap: 1rem;

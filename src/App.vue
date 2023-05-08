@@ -2,21 +2,51 @@
   <header>
     <h1>ResourcesApp</h1>
   </header>
-  <TheNavBar />
+  <TheNavBar :toggleResources="toggleResources" :toggleForm="toggleForm" />
+  <DisplayResources :resources="resources" :showResources="showResources" />
+  <AddResource :counter="counter" />
 </template>
 
 <script>
 import TheNavBar from './components/TheNavBar.vue';
+import DisplayResources from './components/DisplayResources.vue';
+import AddResource from './components/AddResource.vue';
 
 export default {
   name: 'App',
   components: {
     TheNavBar,
+    DisplayResources,
+    AddResource,
   },
   data() {
     return {
-      resources: [],
+      counter: 0,
+      showResources: true,
+      showForm: false,
+      resources: [
+        {
+          id: 1,
+          title: 'offical guide',
+          description: 'The official Vue.js documentation.',
+          link: 'https://vuejs.org/guide/introduction.html',
+        },
+        {
+          id: 2,
+          title: 'google',
+          description: 'Learn more about google by clicking here.',
+          link: 'https://cloud.google.com/docs/',
+        },
+      ],
     };
+  },
+  methods: {
+    toggleResources() {
+      this.showResources = !this.showResources;
+    },
+    toggleForm() {
+      this.showForm = !this.showForm;
+    },
   },
 };
 </script>
@@ -42,5 +72,12 @@ header h1 {
 }
 body {
   margin: 0rem;
+}
+section {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 7px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+  margin: 2rem 4rem;
+  padding: 1rem;
+  border-radius: 3px;
 }
 </style>
