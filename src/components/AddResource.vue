@@ -1,14 +1,17 @@
 <template>
-  <section>
+  <section v-if="showForm">
     <form>
       <label> Title</label>
-      <input placeholder="Enter a title..." />
+      <input placeholder="Enter a title..." v-model="newResource.title" />
 
       <label> Description</label>
-      <textarea placeholder="Enter a description here..."></textarea>
+      <textarea
+        placeholder="Enter a description here..."
+        v-model="newResource.description"
+      ></textarea>
 
       <label> Link</label>
-      <input placeholder="Provide a link..." />
+      <input placeholder="Provide a link..." v-model="newResource.link" />
 
       <button>add resource</button>
     </form>
@@ -17,7 +20,7 @@
 <script>
 export default {
   name: 'AddResource',
-  props: ['counter'],
+  props: ['handleAdd', 'showForm'],
   data() {
     return {
       newResource: {
@@ -27,6 +30,11 @@ export default {
         link: '',
       },
     };
+  },
+  methods: {
+    addItem(item) {
+      this.handleAdd(item);
+    },
   },
 };
 </script>

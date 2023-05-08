@@ -4,7 +4,7 @@
   </header>
   <TheNavBar :toggleResources="toggleResources" :toggleForm="toggleForm" />
   <DisplayResources :resources="resources" :showResources="showResources" />
-  <AddResource :counter="counter" />
+  <AddResource :handleAdd="handleAdd" :showForm="showForm" />
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      counter: 0,
+      counter: 2,
       showResources: true,
       showForm: false,
       resources: [
@@ -46,6 +46,10 @@ export default {
     },
     toggleForm() {
       this.showForm = !this.showForm;
+    },
+    handleAdd(item) {
+      item.id = this.counter++;
+      this.resources.push(item);
     },
   },
 };
