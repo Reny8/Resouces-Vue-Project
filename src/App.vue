@@ -60,6 +60,9 @@ export default {
 </script>
 
 <style>
+html {
+  background-color: #f3f3f3;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -87,5 +90,6 @@ section {
   margin: 2rem 4rem;
   padding: 1rem;
   border-radius: 3px;
+  background-color: white;
 }
 </style>
